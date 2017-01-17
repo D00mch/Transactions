@@ -16,6 +16,7 @@ import java.util.List;
 
 import io.reactivex.Single;
 import io.reactivex.observers.TestObserver;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class TransactionsInteractorTest {
@@ -36,6 +37,12 @@ public class TransactionsInteractorTest {
 
         when(mCurrRepo.getRates()).thenReturn(Single.just(CurrencyData.sRates));
         when(mCurrRepo.getTransactions()).thenReturn(Single.just(CurrencyData.sTransactions));
+    }
+
+    @Test public void caching_sku() throws Exception {
+        String sku = "some sku";
+        mTransactionsInteractor.skuChosen(sku);
+        verify(mHolderRepo).setCurrentSku(sku);
     }
 
     @Test
