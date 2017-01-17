@@ -6,7 +6,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.liverm0r.test.R;
-import com.liverm0r.test.business.currency.detail_transactions.EmptyCacheIOException;
+import com.liverm0r.test.business.detail_transactions.EmptyCacheIOException;
 
 import java.io.IOException;
 

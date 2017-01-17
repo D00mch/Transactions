@@ -3,9 +3,9 @@ package com.liverm0r.test.dagger.currency;
 
 import android.content.Context;
 
-import com.liverm0r.test.business.currency.transactions.ITransactionsInteractor;
-import com.liverm0r.test.business.currency.transactions.TransactionsInteractor;
-import com.liverm0r.test.business.currency.transactions.products_fabric.ProductsInPoundsFabric;
+import com.liverm0r.test.business.transactions.ITransactionsInteractor;
+import com.liverm0r.test.business.transactions.TransactionsInteractor;
+import com.liverm0r.test.business.transactions.products_fabric.ProductsInPoundsFabric;
 import com.liverm0r.test.data.api.ICurrencyApi;
 import com.liverm0r.test.data.api.RetrofitUtilsDebug;
 import com.liverm0r.test.data.repositories.currency.CurrencyQueryRepo;

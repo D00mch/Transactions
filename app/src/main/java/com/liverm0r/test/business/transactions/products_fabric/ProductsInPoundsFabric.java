@@ -1,10 +1,10 @@
-package com.liverm0r.test.business.currency.transactions.products_fabric;
+package com.liverm0r.test.business.transactions.products_fabric;
 
 
 import android.support.annotation.NonNull;
 
-import com.liverm0r.test.business.currency.transactions.exchange.ExchangeImp;
-import com.liverm0r.test.business.currency.transactions.exchange.graph.CurrencyNode;
+import com.liverm0r.test.business.transactions.exchange.ExchangeImp;
+import com.liverm0r.test.business.transactions.exchange.graph.CurrencyNode;
 import com.liverm0r.test.data.model.DetailTransaction;
 import com.liverm0r.test.data.model.Product;
 import com.liverm0r.test.data.model.Rate;

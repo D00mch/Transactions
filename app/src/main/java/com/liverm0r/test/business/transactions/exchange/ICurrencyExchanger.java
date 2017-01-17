@@ -1,9 +1,9 @@
-package com.liverm0r.test.business.currency.transactions.exchange;
+package com.liverm0r.test.business.transactions.exchange;
 
 
 import android.support.annotation.NonNull;
 
-import com.liverm0r.test.business.currency.transactions.exchange.graph.CurrencyNode;
+import com.liverm0r.test.business.transactions.exchange.graph.CurrencyNode;
 
 import java.util.List;
 

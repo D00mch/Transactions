@@ -1,7 +1,7 @@
-package com.liverm0r.test.business.currency.transactions.exchange;
+package com.liverm0r.test.business.transactions.exchange;
 
 
-import com.liverm0r.test.business.currency.transactions.exchange.graph.GraphAlgorithm;
+import com.liverm0r.test.business.transactions.exchange.graph.GraphAlgorithm;
 import com.liverm0r.test.data.model.Rate;
 
 import java.util.List;

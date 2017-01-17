@@ -25,7 +25,9 @@
             android:name=".ui.transactions.TransactionsActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ui.detail_transactions.DetailActivity">
+        <activity android:name=".ui.detail_transactions.DetailActivity"
+                  android:screenOrientation="portrait"
+        >
         </activity>
     </application>
 

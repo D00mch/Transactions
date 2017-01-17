@@ -1,4 +1,4 @@
-package com.liverm0r.test.business.currency.transactions.products_fabric;
+package com.liverm0r.test.business.transactions.products_fabric;
 
 
 import android.support.annotation.NonNull;

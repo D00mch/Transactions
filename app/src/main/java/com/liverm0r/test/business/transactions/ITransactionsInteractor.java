@@ -1,4 +1,4 @@
-package com.liverm0r.test.business.currency.transactions;
+package com.liverm0r.test.business.transactions;
 
 
 import android.support.annotation.NonNull;

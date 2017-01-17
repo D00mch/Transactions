@@ -1,7 +1,7 @@
-package com.liverm0r.test.business.currency.transactions;
+package com.liverm0r.test.business.transactions;
 
 import com.liverm0r.test.business.currency.CurrencyData;
-import com.liverm0r.test.business.currency.transactions.products_fabric.IProductsFabric;
+import com.liverm0r.test.business.transactions.products_fabric.IProductsFabric;
 import com.liverm0r.test.data.model.Product;
 import com.liverm0r.test.data.repositories.currency.ICurrencyQueryRepo;
 import com.liverm0r.test.data.repositories.detail_transactions.IProductHolderRepo;

@@ -3,7 +3,7 @@ package com.liverm0r.test.ui.detail_transactions;
 
 import android.support.annotation.NonNull;
 
-import com.liverm0r.test.business.currency.detail_transactions.IDetailTransInteractor;
+import com.liverm0r.test.business.detail_transactions.IDetailTransInteractor;
 import com.liverm0r.test.common.rx_utils.RxSchedulersAbs;
 import com.liverm0r.test.dagger.currency.detail_transactions.DetailTransScope;
 import com.liverm0r.test.ui.common.error.IErrorHandler;
@@ -21,7 +21,7 @@ public class DetailViewModel extends BaseViewModelAbs {
     private BehaviorSubject<DetailTransModel> mModelSubject;
 
     @Inject
-    public DetailViewModel(@NonNull RxSchedulersAbs rxSchedulers,
+    DetailViewModel(@NonNull RxSchedulersAbs rxSchedulers,
                            @NonNull IErrorHandler errorHandler,
                            @NonNull IDetailTransInteractor interactor) {
         super(rxSchedulers, errorHandler);

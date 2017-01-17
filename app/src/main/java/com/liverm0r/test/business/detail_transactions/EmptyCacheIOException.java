@@ -1,4 +1,4 @@
-package com.liverm0r.test.business.currency.detail_transactions;
+package com.liverm0r.test.business.detail_transactions;
 
 
 import java.io.IOException;

@@ -44,7 +44,7 @@ public class DetailActivity extends BaseActivity {
     private void setUpViewModel(DetailViewModel vm) {
         bind(vm.getModel(), m -> {
             setUpRv(m.getTransactions());
-            detailTransTotalText.setText(String.format("Total: f %.2f", m.getTotal()));
+            detailTransTotalText.setText(String.format("Total: £ %.2f", m.getTotal()));
             toolbarTitle.setText("Transactions for " + m.getSku());
         });
     }

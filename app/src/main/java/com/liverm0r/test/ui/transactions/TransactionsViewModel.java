@@ -3,7 +3,7 @@ package com.liverm0r.test.ui.transactions;
 
 import android.support.annotation.NonNull;
 
-import com.liverm0r.test.business.currency.transactions.ITransactionsInteractor;
+import com.liverm0r.test.business.transactions.ITransactionsInteractor;
 import com.liverm0r.test.common.rx_utils.RxSchedulersAbs;
 import com.liverm0r.test.dagger.currency.transactions.TransactionsScope;
 import com.liverm0r.test.ui.common.error.IErrorHandler;
@@ -25,7 +25,7 @@ public class TransactionsViewModel extends BaseViewModelAbs {
     private BehaviorSubject<List<TransactionsModel>> mTransactionsSubj;
 
     @Inject
-    public TransactionsViewModel(@NonNull RxSchedulersAbs rxSchedulers,
+    TransactionsViewModel(@NonNull RxSchedulersAbs rxSchedulers,
                                  @NonNull IErrorHandler errorHandler,
                                  @NonNull ITransactionsInteractor interactor,
                                  @NonNull ITransactionsRouter router) {
