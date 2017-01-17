@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.liverm0r.test"
+<manifest package="com.liverm0r.transactions"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
-        android:name=".App"
+        android:name="com.liverm0r.transactions.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name="com.liverm0r.transactions.ui.main.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -22,10 +22,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.transactions.TransactionsActivity"
+            android:name="com.liverm0r.transactions.ui.transactions.TransactionsActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ui.detail_transactions.DetailActivity"
+        <activity android:name="com.liverm0r.transactions.ui.detail_transactions.DetailActivity"
                   android:screenOrientation="portrait"
         >
         </activity>

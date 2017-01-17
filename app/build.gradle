@@ -5,7 +5,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
     defaultConfig {
-        applicationId "com.liverm0r.test"
+        applicationId "com.liverm0r.transactions"
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
