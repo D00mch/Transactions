@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/transactionRvItemRoot"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/rv_item_mar_but"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+>
+
+    <TextView
+        android:id="@+id/transactionRvSku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/trans_pad_left"
+        android:paddingTop="10dp"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="some id"/>
+
+    <TextView
+        android:id="@+id/transactionRvAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transactionRvSku"
+        android:paddingLeft="@dimen/trans_pad_left"
+        android:textSize="18sp"
+        tools:text="20"
+    />
+
+    <TextView
+        android:id="@+id/transactionRvItemNames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transactionRvSku"
+        android:layout_toRightOf="@+id/transactionRvAmount"
+        android:paddingLeft="7dp"
+        android:text="transactions"
+        android:textSize="18sp"
+    />
+
+</RelativeLayout>

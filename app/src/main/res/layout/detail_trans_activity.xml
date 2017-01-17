@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_detail_sku"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liverm0r.test.ui.detail_transactions.DetailActivity"
+    >
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/include_toolbar">
+    </include>
+
+    <TextView
+        android:id="@+id/detailTransTotalText"
+        android:layout_below="@+id/toolbar"
+        tools:text=" Total : f9.603,57"
+        android:paddingLeft="@dimen/trans_pad_left"
+        android:paddingTop="@dimen/detail_total_text_pad"
+        android:paddingBottom="@dimen/detail_total_text_pad"
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@color/colorBgLight"
+        android:layout_height="wrap_content"
+    />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/detailTransRv"
+        android:paddingTop="5dp"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:layout_below="@+id/detailTransTotalText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="trans_pad_left">20dp</dimen>
+    <dimen name="rv_item_mar_but">25dp</dimen>
+    <dimen name="detail_total_text_pad">7dp</dimen>
+</resources>
