@@ -19,6 +19,7 @@ import io.reactivex.observers.TestObserver;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+
 public class TransactionsInteractorTest {
 
     TransactionsInteractor mTransactionsInteractor;
@@ -68,5 +69,7 @@ public class TransactionsInteractorTest {
         });
         listTestObserver.assertNoErrors();
         listTestObserver.assertComplete();
+
+        verify(mHolderRepo).setProducts(products);
     }
 }
