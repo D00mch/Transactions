@@ -20,9 +20,7 @@ import static com.liverm0r.transactions.common.NAMES.GBP;
 
 public class ProductsInPoundsFabric implements IProductsFabric {
 
-
     private ICurrencyExchanger mExchanger;
-
     private HashMap<String, Float> currencyToRateMap; // caching already calculated rates
 
     @NonNull @Override
