@@ -22,12 +22,14 @@ public class ProductsInPoundsFabric implements IProductsFabric {
 
 
     private ICurrencyExchanger mExchanger;
-    //private HashMap<CurrencyNode, GraphAlgorithm> currencyToAlgorithmMap;
+
+    private HashMap<String, Float> currencyToRateMap; // caching already calculated rates
 
     @NonNull @Override
     public List<Product> get(@NonNull List<Transaction> transactions,
                              @NonNull List<Rate> rates) {
 
+        currencyToRateMap = new HashMap<>();
         mExchanger = new ExchangeImp(rates);
 
         HashMap<String, Product> skuToProduct = new HashMap<>();//sku to
@@ -48,9 +50,15 @@ public class ProductsInPoundsFabric implements IProductsFabric {
     }
 
     private DetailTransaction buildNewTransaction(Transaction prevTrans) {
-        mExchanger.calc(new CurrencyNode(prevTrans.getCurrency()));
+
+        Float currencyRate = currencyToRateMap.get(prevTrans.getCurrency());
+        if (currencyRate == null) {
+            mExchanger.calc(new CurrencyNode(prevTrans.getCurrency()));
+            currencyRate = mExchanger.getFinalRate(new CurrencyNode(GBP));
+            currencyToRateMap.put(prevTrans.getCurrency(), currencyRate);
+        }
         float prevAmount = Float.parseFloat(prevTrans.getAmount());
-        float newAmount = mExchanger.getFinalRate(new CurrencyNode(GBP)) * prevAmount;
+        float newAmount = currencyRate * prevAmount;
 
         return new DetailTransaction(prevTrans.getCurrency(), GBP, prevAmount, newAmount);
     }

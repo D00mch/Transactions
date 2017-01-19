@@ -85,7 +85,6 @@ public class GraphAlgorithm {
         return mCurrentSource != null ? mCurrentSource.hashCode() : 0;
     }
 
-
     //—————————————————————————————————————————————————————————————————————— helpers
 
     private void findMinimalDistances(CurrencyNode node) {
