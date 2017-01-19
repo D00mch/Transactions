@@ -21,8 +21,6 @@ public class GraphAlgorithm {
     private Map<CurrencyNode, CurrencyNode> mPredecessors;
     private Map<CurrencyNode, Float> mRates;
 
-    private CurrencyNode mCurrentSource;
-
     public GraphAlgorithm(RatesGraph graph) {
         mNodes = new ArrayList<>(graph.getVertexes());
         mEdges = new ArrayList<>(graph.getEdges());
@@ -34,8 +32,6 @@ public class GraphAlgorithm {
     //—————————————————————————————————————————————————————————————————————— api
 
     public void calc(@NonNull CurrencyNode source) {
-
-        mCurrentSource = source;
 
         mSettledNodes = new HashSet<>(mNodes.size());
         mUnSettledNodes = new HashSet<>(mNodes.size());

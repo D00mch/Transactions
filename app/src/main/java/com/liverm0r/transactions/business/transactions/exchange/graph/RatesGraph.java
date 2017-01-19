@@ -45,11 +45,11 @@ public class RatesGraph {
         return currencyNamesSet;
     }
 
-    public @NonNull List<CurrencyNode> getVertexes() {
+    @NonNull List<CurrencyNode> getVertexes() {
         return nodes;
     }
 
-    public @NonNull List<CurrencyEdge> getEdges() {
+    @NonNull List<CurrencyEdge> getEdges() {
         return edges;
     }
 }
