@@ -2,6 +2,7 @@ package com.liverm0r.transactions.business.transactions;
 
 
 import android.support.annotation.NonNull;
+import android.support.v4.util.Pair;
 
 import com.liverm0r.transactions.business.transactions.products_fabric.IProductsFabric;
 import com.liverm0r.transactions.data.model.Product;
@@ -33,14 +34,13 @@ public class TransactionsInteractor implements ITransactionsInteractor {
     @Override @NonNull public Single<List<TransactionsModel>> getTransactions() {
 
         return mCurrencyQueryRepo.getRates()
+                .zipWith(mCurrencyQueryRepo.getTransactions(), Pair::new)
                 .observeOn(Schedulers.computation())
-                .zipWith(mCurrencyQueryRepo.getTransactions(), (rates, transactions) ->
-                        mProductsInPoundsFabric.get(transactions, rates))
-                .map(products -> {
+                .map(pair -> {
+                    List<Product> products = mProductsInPoundsFabric.get(pair.second, pair.first);
                     mProductHolderRepo.setProducts(products);
-                    return products;
-                })
-                .map(this::buildTransactionModels);
+                    return buildTransactionModels(products);
+                });
     }
 
     @Override public void skuChosen(@NonNull String sku) {

@@ -20,6 +20,8 @@ import static com.liverm0r.transactions.common.NAMES.GBP;
 
 public class ProductsInPoundsFabric implements IProductsFabric {
 
+    private static final String TAG = ProductsInPoundsFabric.class.getSimpleName();
+
     private ICurrencyExchanger mExchanger;
     private HashMap<String, Float> currencyToRateMap; // caching already calculated rates
 
@@ -30,7 +32,7 @@ public class ProductsInPoundsFabric implements IProductsFabric {
         currencyToRateMap = new HashMap<>();
         mExchanger = new ExchangeImp(rates);
 
-        HashMap<String, Product> skuToProduct = new HashMap<>();//sku to
+        HashMap<String, Product> skuToProduct = new HashMap<>();
 
         for (Transaction transaction : transactions) {
             Product product = skuToProduct.get(transaction.getSku());

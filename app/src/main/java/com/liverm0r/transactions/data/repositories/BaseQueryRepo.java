@@ -11,7 +11,7 @@ import retrofit2.Response;
 
 public class BaseQueryRepo {
 
-    protected @NonNull <T> Single<T> converResponse(@NonNull Observable<Response<T>> observable) {
+    protected @NonNull <T> Single<T> convertResponse(@NonNull Observable<Response<T>> observable) {
         return observable.firstOrError()
                 .map(response -> {
                     if (response.isSuccessful()) return response.body();

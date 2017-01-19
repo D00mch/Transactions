@@ -21,10 +21,10 @@ public class CurrencyQueryRepo extends BaseQueryRepo implements ICurrencyQueryRe
     }
 
     @Override public @NonNull Single<List<Rate>> getRates() {
-        return converResponse(mCurrencyApi.getRates());
+        return convertResponse(mCurrencyApi.getRates());
     }
 
     @Override public @NonNull Single<List<Transaction>> getTransactions() {
-        return converResponse(mCurrencyApi.getTransactions());
+        return convertResponse(mCurrencyApi.getTransactions());
     }
 }
