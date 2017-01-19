@@ -24,7 +24,6 @@ public class MainActivity extends BaseActivity implements IMainRouter {
 
     @BindView(R.id.testTextView) TextView testTextView;
 
-
     @Override protected BaseViewModelAbs provideVM() {
         return mViewModel;
     }
@@ -35,7 +34,6 @@ public class MainActivity extends BaseActivity implements IMainRouter {
         App.get(this).applicationComponent().plus(new MainModule(this)).inject(this);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
         mViewModel.created();
     }
 
@@ -43,5 +41,6 @@ public class MainActivity extends BaseActivity implements IMainRouter {
 
     @Override public void startTransactions() {
         startActivity(new Intent(this, TransactionsActivity.class));
+        finish();
     }
 }

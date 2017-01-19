@@ -1,6 +1,7 @@
 package com.liverm0r.transactions.business.detail_transactions;
 
 
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.liverm0r.transactions.data.model.Product;
@@ -39,7 +40,7 @@ public class DetailTransInteractor implements IDetailTransInteractor {
     }
 
     private DetailTransModel buildDetailTransactionModel(List<Product> products,
-                                                         String sku) throws EmptyCacheIOException {
+                                                         @Nullable String sku) throws EmptyCacheIOException {
         if (products.isEmpty() || sku == null) throw new EmptyCacheIOException();
         Product prod = null;
         for (Product product : products) {

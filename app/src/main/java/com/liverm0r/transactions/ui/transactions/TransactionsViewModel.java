@@ -24,11 +24,10 @@ public class TransactionsViewModel extends BaseViewModelAbs {
 
     private BehaviorSubject<List<TransactionsModel>> mTransactionsSubj;
 
-    @Inject
-    TransactionsViewModel(@NonNull RxSchedulersAbs rxSchedulers,
-                                 @NonNull IErrorHandler errorHandler,
-                                 @NonNull ITransactionsInteractor interactor,
-                                 @NonNull ITransactionsRouter router) {
+    @Inject TransactionsViewModel(@NonNull RxSchedulersAbs rxSchedulers,
+                                  @NonNull IErrorHandler errorHandler,
+                                  @NonNull ITransactionsInteractor interactor,
+                                  @NonNull ITransactionsRouter router) {
         super(rxSchedulers, errorHandler);
 
         this.mRouter = router;

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Single;
+import io.reactivex.schedulers.Schedulers;
 
 public class TransactionsInteractor implements ITransactionsInteractor {
 
@@ -32,6 +33,7 @@ public class TransactionsInteractor implements ITransactionsInteractor {
     @Override @NonNull public Single<List<TransactionsModel>> getTransactions() {
 
         return mCurrencyQueryRepo.getRates()
+                .observeOn(Schedulers.computation())
                 .zipWith(mCurrencyQueryRepo.getTransactions(), (rates, transactions) ->
                         mProductsInPoundsFabric.get(transactions, rates))
                 .map(products -> {

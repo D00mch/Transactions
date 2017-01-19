@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TestApp</string>
+    <string name="app_name">Badoo test app</string>
 
     <string name="exc_base_io">Basic IO exception</string>
     <string name="TransactionsTitle">Products</string>
