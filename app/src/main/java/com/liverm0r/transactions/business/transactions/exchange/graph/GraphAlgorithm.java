@@ -71,20 +71,6 @@ public class GraphAlgorithm {
         return mRates;
     }
 
-    //——————————————————————————————————————————————————————————————————————
-    // to cache algorithms by source Nodes
-
-    @Override public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof GraphAlgorithm)) return false;
-        GraphAlgorithm that = (GraphAlgorithm) o;
-        return mCurrentSource != null ? mCurrentSource.equals(that.mCurrentSource) : that.mCurrentSource == null;
-    }
-
-    @Override public int hashCode() {
-        return mCurrentSource != null ? mCurrentSource.hashCode() : 0;
-    }
-
     //—————————————————————————————————————————————————————————————————————— helpers
 
     private void findMinimalDistances(CurrencyNode node) {

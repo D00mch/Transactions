@@ -28,7 +28,6 @@ public class TransactionsInteractor implements ITransactionsInteractor {
         mCurrencyQueryRepo = currencyQueryRepo;
         mProductHolderRepo = productHolderRepo;
         mProductsInPoundsFabric = productsInPoundsFabric;
-//        mExchanger = new ExchangeImp();
     }
 
     @Override @NonNull public Single<List<TransactionsModel>> getTransactions() {
