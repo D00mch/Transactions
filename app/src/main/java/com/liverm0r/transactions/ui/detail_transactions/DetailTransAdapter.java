@@ -27,6 +27,7 @@ public class DetailTransAdapter extends RecyclerView.Adapter<DetailTransAdapter.
 
     public void setTransactionsModels(@NonNull List<DetailTransaction> transactions) {
         mTransactions = transactions;
+        notifyDataSetChanged();
     }
 
     @Override public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

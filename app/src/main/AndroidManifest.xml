@@ -14,8 +14,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.liverm0r.transactions.ui.main.MainActivity"
-            android:screenOrientation="portrait"
             android:launchMode="standard"
+            android:screenOrientation="portrait"
         >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -25,7 +25,8 @@
         </activity>
         <activity
             android:name="com.liverm0r.transactions.ui.transactions.TransactionsActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+        >
         </activity>
         <activity android:name="com.liverm0r.transactions.ui.detail_transactions.DetailActivity"
                   android:screenOrientation="portrait"

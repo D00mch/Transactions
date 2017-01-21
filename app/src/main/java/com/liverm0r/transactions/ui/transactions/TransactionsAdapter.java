@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.liverm0r.transactions.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -22,10 +23,12 @@ public class TransactionsAdapter extends RecyclerView.Adapter<TransactionsAdapte
 
     public TransactionsAdapter(Consumer<TransactionsModel> actionOnPress) {
         this.onPressListener = actionOnPress;
+        mTransactionsModels = new ArrayList<>();
     }
 
     public void setTransactionsModels(List<TransactionsModel> transactionsModels) {
         mTransactionsModels = transactionsModels;
+        notifyDataSetChanged();
     }
 
     @Override public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

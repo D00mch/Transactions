@@ -8,11 +8,8 @@ import android.widget.TextView;
 import com.liverm0r.transactions.App;
 import com.liverm0r.transactions.R;
 import com.liverm0r.transactions.dagger.currency.detail_transactions.DetailTransModule;
-import com.liverm0r.transactions.data.model.DetailTransaction;
 import com.liverm0r.transactions.ui.common.ui_base.BaseActivity;
 import com.liverm0r.transactions.ui.common.ui_base.BaseViewModelAbs;
-
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -28,6 +25,8 @@ public class DetailActivity extends BaseActivity {
 
     @Inject DetailViewModel mViewModel;
 
+    private DetailTransAdapter mDetailTransAdapter;
+
     @Override protected BaseViewModelAbs provideVM() {
         return mViewModel;
     }
@@ -38,25 +37,23 @@ public class DetailActivity extends BaseActivity {
         App.get(this).currencyComponent().plus(new DetailTransModule()).inject(this);
         setContentView(R.layout.detail_trans_activity);
         ButterKnife.bind(this);
+
+        setUpRv();
         setUpViewModel(mViewModel);
     }
 
     private void setUpViewModel(DetailViewModel vm) {
-        bind(vm.getModel(), m -> {
-            setUpRv(m.getTransactions());
-            detailTransTotalText.setText(String.format("Total: £ %.2f", m.getTotal()));
-            toolbarTitle.setText("Transactions for " + m.getSku());
+        bind(vm.getModel(), model -> {
+            mDetailTransAdapter.setTransactionsModels(model.getTransactions());
+            detailTransTotalText.setText(String.format("Total: £ %.2f", model.getTotal()));
+            toolbarTitle.setText("Transactions for " + model.getSku());
         });
     }
 
-    private void setUpRv(List<DetailTransaction> transactions) {
-
+    private void setUpRv() {
         detailTransRv.setLayoutManager(new LinearLayoutManager(this));
         OverScrollDecoratorHelper.setUpOverScroll(detailTransRv, OverScrollDecoratorHelper.ORIENTATION_VERTICAL);
-        if (detailTransRv.getAdapter() == null) {
-            DetailTransAdapter detailTransAdapter = new DetailTransAdapter();
-            detailTransRv.setAdapter(detailTransAdapter);
-            detailTransAdapter.setTransactionsModels(transactions);
-        }
+        mDetailTransAdapter = new DetailTransAdapter();
+        detailTransRv.setAdapter(mDetailTransAdapter);
     }
 }

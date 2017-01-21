@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.liverm0r.transactions.App;
@@ -14,8 +13,6 @@ import com.liverm0r.transactions.dagger.currency.transactions.TransactionModule;
 import com.liverm0r.transactions.ui.common.ui_base.BaseActivity;
 import com.liverm0r.transactions.ui.common.ui_base.BaseViewModelAbs;
 import com.liverm0r.transactions.ui.detail_transactions.DetailActivity;
-
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -36,6 +33,8 @@ public class TransactionsActivity extends BaseActivity implements ITransactionsR
         return mViewModel;
     }
 
+    private TransactionsAdapter mTransactionsAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,26 +43,23 @@ public class TransactionsActivity extends BaseActivity implements ITransactionsR
         ButterKnife.bind(this);
 
         toolbarTitle.setText(R.string.TransactionsTitle);
+        setUpRv();
+
         bindViewModel(mViewModel);
     }
 
-    private void bindViewModel(TransactionsViewModel vm) {
-        Log.i(TAG, "bindViewModel");
-        vm.getTransactions().subscribe(transactionsModels -> {
-            Log.i(TAG, "bindViewModel: products == " + transactionsModels);
-            setUpRv(transactionsModels);
-        });
-    }
-
-    private void setUpRv(List<TransactionsModel> transactionsModels) {
+    private void setUpRv() {
+        mTransactionsAdapter = new TransactionsAdapter(
+                transactionsModel -> mViewModel.clickOnTransactions(transactionsModel));
         transactionRv.setLayoutManager(new LinearLayoutManager(this));
         OverScrollDecoratorHelper.setUpOverScroll(transactionRv, OverScrollDecoratorHelper.ORIENTATION_VERTICAL);
-        if (transactionRv.getAdapter() == null) {
-            TransactionsAdapter transactionsAdapter = new TransactionsAdapter(
-                    transactionsModel -> mViewModel.clickOnTransactions(transactionsModel));
-            transactionsAdapter.setTransactionsModels(transactionsModels);
-            transactionRv.setAdapter(transactionsAdapter);
-        }
+        transactionRv.setAdapter(mTransactionsAdapter);
+    }
+
+    private void bindViewModel(TransactionsViewModel vm) {
+        vm.getTransactions().subscribe(transactionsModels -> {
+            mTransactionsAdapter.setTransactionsModels(transactionsModels);
+        });
     }
 
     @Override public void showDetailProduct() {
