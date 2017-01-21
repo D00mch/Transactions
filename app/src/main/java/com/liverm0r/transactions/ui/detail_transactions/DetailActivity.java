@@ -39,6 +39,10 @@ public class DetailActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         setUpRv();
+    }
+
+    @Override protected void onStart() {
+        super.onStart();
         setUpViewModel(mViewModel);
     }
 

@@ -34,6 +34,10 @@ public class MainActivity extends BaseActivity implements IMainRouter {
         App.get(this).applicationComponent().plus(new MainModule(this)).inject(this);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+    }
+
+    @Override protected void onStart() {
+        super.onStart();
         mViewModel.created();
     }
 

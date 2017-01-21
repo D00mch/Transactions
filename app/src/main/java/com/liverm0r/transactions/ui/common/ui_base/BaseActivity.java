@@ -24,14 +24,18 @@ public abstract class BaseActivity extends AppCompatActivity {
         mDisposables = new CompositeDisposable();
     }
 
-    @Override protected void onDestroy() {
-        super.onDestroy();
-        provideVM().onViewDestroyed();
-        mDisposables.clear();
-        baseViewModelActivity(provideVM());
+    @Override protected void onStart() {
+        super.onStart();
+        baseViewModelBinding(provideVM());
     }
 
-    protected void baseViewModelActivity(BaseViewModelAbs vm) {
+    @Override protected void onStop() {
+        super.onStop();
+        mDisposables.clear();
+        provideVM().onViewDestroyed();
+    }
+
+    protected void baseViewModelBinding(BaseViewModelAbs vm) {
         bind(vm.errorAction(), action -> action.accept(this));
         bind(vm.errorMessage(), System.out::println);
     }
