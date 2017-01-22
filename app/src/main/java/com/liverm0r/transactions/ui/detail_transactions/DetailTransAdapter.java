@@ -17,15 +17,15 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DetailTransAdapter extends RecyclerView.Adapter<DetailTransAdapter.ViewHolder> {
+class DetailTransAdapter extends RecyclerView.Adapter<DetailTransAdapter.ViewHolder> {
 
     private List<DetailTransaction> mTransactions;
 
-    public DetailTransAdapter() {
+    DetailTransAdapter() {
         mTransactions = new ArrayList<>();
     }
 
-    public void setTransactionsModels(@NonNull List<DetailTransaction> transactions) {
+    void setTransactionsModels(@NonNull List<DetailTransaction> transactions) {
         mTransactions = transactions;
         notifyDataSetChanged();
     }
@@ -53,12 +53,12 @@ public class DetailTransAdapter extends RecyclerView.Adapter<DetailTransAdapter.
         return mTransactions.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.detailTransCurrFrom) TextView textCurrFrom;
         @BindView(R.id.detailTransCurrTo) TextView textCurrTo;
 
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
         }
