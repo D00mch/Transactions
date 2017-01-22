@@ -14,15 +14,18 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.reactivex.functions.Consumer;
 
 public class TransactionsAdapter extends RecyclerView.Adapter<TransactionsAdapter.ViewHolder> {
 
     private List<TransactionsModel> mTransactionsModels;
-    private Consumer<TransactionsModel> onPressListener;
+    private IAction mAction;
 
-    public TransactionsAdapter(Consumer<TransactionsModel> actionOnPress) {
-        this.onPressListener = actionOnPress;
+    interface IAction{
+        void onClick(TransactionsModel model);
+    }
+
+    public TransactionsAdapter(IAction actionOnPress) {
+        mAction = actionOnPress;
         mTransactionsModels = new ArrayList<>();
     }
 
@@ -41,13 +44,7 @@ public class TransactionsAdapter extends RecyclerView.Adapter<TransactionsAdapte
         TransactionsModel transactionsModel = mTransactionsModels.get(position);
         holder.textSku.setText(transactionsModel.getSku());
         holder.textAmount.setText(String.valueOf(transactionsModel.getAmount()));
-        holder.parentView.setOnClickListener(v -> {
-            try {
-                onPressListener.accept(transactionsModel);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+        holder.parentView.setOnClickListener(v -> mAction.onClick(transactionsModel));
     }
 
     @Override public int getItemCount() {

@@ -39,6 +39,12 @@ public class DetailActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         setUpRv();
+
+//        findViewById(R.id.activity_detail_sku).setOnClickListener(v ->{
+//            Intent intent = new Intent(this, MainActivity.class);
+//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(new Intent(this, MainActivity.class));
+//        });
     }
 
     @Override protected void onStart() {

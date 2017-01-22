@@ -45,6 +45,6 @@ public class MainActivity extends BaseActivity implements IMainRouter {
 
     @Override public void startTransactions() {
         startActivity(new Intent(this, TransactionsActivity.class));
-        finish();
+        //finish();
     }
 }
