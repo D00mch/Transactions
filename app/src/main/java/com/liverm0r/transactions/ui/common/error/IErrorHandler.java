@@ -9,9 +9,9 @@ import io.reactivex.Observable;
 
 public interface IErrorHandler {
 
-    public void errorHappened(Throwable exception);
+    void errorHappened(Throwable exception);
 
-    public Observable<Consumer<Context>> doOnError();
+    Observable<Consumer<Context>> doOnError();
 
-    public Observable<String> showOnError();
+    Observable<String> showOnError();
 }

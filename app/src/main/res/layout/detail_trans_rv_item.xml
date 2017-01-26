@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_marginBottom="@dimen/rv_item_mar_but"
->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/rv_item_mar_but"
+    android:orientation="vertical"
+    >
 
     <TextView
         android:id="@+id/detailTransCurrFrom"
@@ -22,11 +23,11 @@
         android:id="@+id/detailTransCurrTo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/transactionRvSku"
-        android:paddingLeft="@dimen/trans_pad_left"
+        android:layout_below="@+id/detailTransCurrFrom"
         android:layout_marginTop="4dp"
+        android:paddingLeft="@dimen/trans_pad_left"
         android:textSize="18sp"
         tools:text="f200"
-    />
+        />
 
-</LinearLayout>
+</RelativeLayout>

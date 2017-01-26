@@ -3,6 +3,7 @@ package com.liverm0r.transactions.common.rx_utils;
 
 import io.reactivex.ObservableTransformer;
 import io.reactivex.Scheduler;
+import io.reactivex.SingleTransformer;
 
 public abstract class RxSchedulersAbs {
 
@@ -26,6 +27,10 @@ public abstract class RxSchedulersAbs {
         return upstream -> upstream
                 .subscribeOn(subscribeScheduler)
                 .observeOn(getMainThreadScheduler());
+    }
+
+    private <T> SingleTransformer<T, T> g() {
+        return upstream -> upstream;
     }
 
     public <T> ObservableTransformer<T, T> getIOToMainTransformer() {

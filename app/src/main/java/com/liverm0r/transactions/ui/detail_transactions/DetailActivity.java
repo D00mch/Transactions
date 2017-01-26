@@ -1,5 +1,6 @@
 package com.liverm0r.transactions.ui.detail_transactions;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -52,6 +53,7 @@ public class DetailActivity extends BaseActivity {
         setUpViewModel(mViewModel);
     }
 
+    @SuppressLint({"DefaultLocale", "SetTextI18n"})
     private void setUpViewModel(DetailViewModel vm) {
         bind(vm.getModel(), model -> {
             mDetailTransAdapter.setTransactionsModels(model.getTransactions());

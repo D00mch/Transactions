@@ -2,6 +2,7 @@ package com.liverm0r.transactions.business.transactions.products_fabric;
 
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.liverm0r.transactions.business.transactions.exchange.ExchangeImp;
 import com.liverm0r.transactions.business.transactions.exchange.ICurrencyExchanger;
@@ -32,7 +33,9 @@ public class ProductsInPoundsFabric implements IProductsFabric {
         currencyToRateMap = new HashMap<>();
         mExchanger = new ExchangeImp(rates);
 
-        HashMap<String, Product> skuToProduct = new HashMap<>();
+        HashMap<String, Product> skuToProduct = new HashMap<>();//sku to
+
+        Log.i(TAG, "Thread.name == " + Thread.currentThread().getName());
 
         for (Transaction transaction : transactions) {
             Product product = skuToProduct.get(transaction.getSku());
@@ -45,6 +48,7 @@ public class ProductsInPoundsFabric implements IProductsFabric {
             DetailTransaction transInPounds = buildNewTransaction(transaction);
             product.getTransactions().add(transInPounds);
         }
+
 
         return new ArrayList<>(skuToProduct.values());
     }

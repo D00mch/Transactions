@@ -13,10 +13,9 @@ import java.util.Set;
 public class RatesGraph {
     private List<CurrencyNode> nodes;
     private List<CurrencyEdge> edges;
-    private static Set<String> currencyNames;
 
     public RatesGraph(@NonNull List<Rate> rates) {
-        currencyNames = createCurrencySet(rates);
+        Set<String> currencyNames = createCurrencySet(rates);
         nodes = new ArrayList<>(currencyNames.size());
         edges = new ArrayList<>(rates.size());
 
