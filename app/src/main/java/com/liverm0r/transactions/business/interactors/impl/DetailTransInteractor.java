@@ -1,11 +1,13 @@
-package com.liverm0r.transactions.business.detail_transactions;
+package com.liverm0r.transactions.business.interactors.impl;
 
 
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.liverm0r.transactions.business.exception.EmptyCacheIOException;
+import com.liverm0r.transactions.business.interactors.IDetailTransInteractor;
 import com.liverm0r.transactions.data.model.Product;
-import com.liverm0r.transactions.data.repositories.detail_transactions.IProductHolderRepo;
+import com.liverm0r.transactions.data.repositories.IProductHolderRepo;
 import com.liverm0r.transactions.ui.detail_transactions.DetailTransModel;
 
 import java.io.IOError;

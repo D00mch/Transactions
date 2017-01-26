@@ -1,11 +1,11 @@
-package com.liverm0r.transactions.business.transactions.exchange;
+package com.liverm0r.transactions.business.helpers.exchange;
 
 
 import android.support.annotation.NonNull;
 
-import com.liverm0r.transactions.business.transactions.exchange.graph.CurrencyNode;
-import com.liverm0r.transactions.business.transactions.exchange.graph.GraphAlgorithm;
-import com.liverm0r.transactions.business.transactions.exchange.graph.RatesGraph;
+import com.liverm0r.transactions.business.helpers.exchange.graph.CurrencyNode;
+import com.liverm0r.transactions.business.helpers.exchange.graph.GraphAlgorithm;
+import com.liverm0r.transactions.business.helpers.exchange.graph.RatesGraph;
 import com.liverm0r.transactions.data.model.Rate;
 
 

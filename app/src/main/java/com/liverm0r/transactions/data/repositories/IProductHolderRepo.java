@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.data.repositories.detail_transactions;
+package com.liverm0r.transactions.data.repositories;
 
 
 import android.support.annotation.NonNull;

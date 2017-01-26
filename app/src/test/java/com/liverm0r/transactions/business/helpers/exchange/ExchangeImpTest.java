@@ -1,6 +1,6 @@
-package com.liverm0r.transactions.business.transactions.exchange;
+package com.liverm0r.transactions.business.helpers.exchange;
 
-import com.liverm0r.transactions.business.transactions.exchange.graph.CurrencyNode;
+import com.liverm0r.transactions.business.helpers.exchange.graph.CurrencyNode;
 import com.liverm0r.transactions.data.model.Rate;
 
 import org.junit.Test;

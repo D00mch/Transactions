@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.business.detail_transactions;
+package com.liverm0r.transactions.business.exception;
 
 
 import java.io.IOException;

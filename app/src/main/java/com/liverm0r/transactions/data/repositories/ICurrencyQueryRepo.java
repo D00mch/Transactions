@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.data.repositories.currency;
+package com.liverm0r.transactions.data.repositories;
 
 
 import com.liverm0r.transactions.data.model.Rate;

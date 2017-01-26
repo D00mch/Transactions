@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.business.transactions.products_fabric;
+package com.liverm0r.transactions.business.helpers.products_fabric;
 
 
 import android.support.annotation.NonNull;

@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.business.detail_transactions;
+package com.liverm0r.transactions.business.interactors;
 
 
 import com.liverm0r.transactions.ui.detail_transactions.DetailTransModel;

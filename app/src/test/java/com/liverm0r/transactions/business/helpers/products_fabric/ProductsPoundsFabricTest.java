@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.business.transactions.products_fabric;
+package com.liverm0r.transactions.business.helpers.products_fabric;
 
 import com.liverm0r.transactions.business.currency.CurrencyData;
 import com.liverm0r.transactions.data.model.Product;

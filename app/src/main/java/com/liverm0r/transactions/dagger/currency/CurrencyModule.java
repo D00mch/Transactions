@@ -3,15 +3,15 @@ package com.liverm0r.transactions.dagger.currency;
 
 import android.content.Context;
 
-import com.liverm0r.transactions.business.transactions.ITransactionsInteractor;
-import com.liverm0r.transactions.business.transactions.TransactionsInteractor;
-import com.liverm0r.transactions.business.transactions.products_fabric.ProductsInPoundsFabric;
+import com.liverm0r.transactions.business.interactors.ITransactionsInteractor;
+import com.liverm0r.transactions.business.interactors.impl.TransactionsInteractor;
+import com.liverm0r.transactions.business.helpers.products_fabric.ProductsInPoundsFabric;
 import com.liverm0r.transactions.data.api.ICurrencyApi;
 import com.liverm0r.transactions.data.api.RetrofitUtilsDebug;
-import com.liverm0r.transactions.data.repositories.currency.CurrencyQueryRepo;
-import com.liverm0r.transactions.data.repositories.currency.ICurrencyQueryRepo;
-import com.liverm0r.transactions.data.repositories.detail_transactions.IProductHolderRepo;
-import com.liverm0r.transactions.data.repositories.detail_transactions.ProductHolderRepo;
+import com.liverm0r.transactions.data.repositories.impl.CurrencyQueryRepo;
+import com.liverm0r.transactions.data.repositories.ICurrencyQueryRepo;
+import com.liverm0r.transactions.data.repositories.IProductHolderRepo;
+import com.liverm0r.transactions.data.repositories.impl.ProductHolderRepo;
 
 import dagger.Module;
 import dagger.Provides;

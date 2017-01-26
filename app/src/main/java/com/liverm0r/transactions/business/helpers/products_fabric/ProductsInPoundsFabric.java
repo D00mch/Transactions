@@ -1,12 +1,12 @@
-package com.liverm0r.transactions.business.transactions.products_fabric;
+package com.liverm0r.transactions.business.helpers.products_fabric;
 
 
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.liverm0r.transactions.business.transactions.exchange.ExchangeImp;
-import com.liverm0r.transactions.business.transactions.exchange.ICurrencyExchanger;
-import com.liverm0r.transactions.business.transactions.exchange.graph.CurrencyNode;
+import com.liverm0r.transactions.business.helpers.exchange.ExchangeImp;
+import com.liverm0r.transactions.business.helpers.exchange.ICurrencyExchanger;
+import com.liverm0r.transactions.business.helpers.exchange.graph.CurrencyNode;
 import com.liverm0r.transactions.data.model.DetailTransaction;
 import com.liverm0r.transactions.data.model.Product;
 import com.liverm0r.transactions.data.model.Rate;

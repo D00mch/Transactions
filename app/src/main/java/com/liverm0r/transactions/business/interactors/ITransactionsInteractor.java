@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.business.transactions;
+package com.liverm0r.transactions.business.interactors;
 
 
 import android.support.annotation.NonNull;

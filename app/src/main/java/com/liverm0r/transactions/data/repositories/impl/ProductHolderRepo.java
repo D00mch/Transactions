@@ -1,10 +1,11 @@
-package com.liverm0r.transactions.data.repositories.detail_transactions;
+package com.liverm0r.transactions.data.repositories.impl;
 
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.liverm0r.transactions.data.model.Product;
+import com.liverm0r.transactions.data.repositories.IProductHolderRepo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,6 @@ public class ProductHolderRepo implements IProductHolderRepo {
     @Override public @NonNull List<Product> getProducts() {
         return mProducts;
     }
-
 
     @Override public void setCurrentSku(@NonNull String sku) {
         mSku = sku;

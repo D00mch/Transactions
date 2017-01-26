@@ -3,7 +3,7 @@ package com.liverm0r.transactions.ui.detail_transactions;
 
 import android.support.annotation.NonNull;
 
-import com.liverm0r.transactions.business.detail_transactions.IDetailTransInteractor;
+import com.liverm0r.transactions.business.interactors.IDetailTransInteractor;
 import com.liverm0r.transactions.common.rx_utils.RxSchedulersAbs;
 import com.liverm0r.transactions.dagger.currency.detail_transactions.DetailTransScope;
 import com.liverm0r.transactions.common.error.IErrorHandler;

@@ -1,10 +1,11 @@
 package com.liverm0r.transactions.business.transactions;
 
 import com.liverm0r.transactions.business.currency.CurrencyData;
-import com.liverm0r.transactions.business.transactions.products_fabric.IProductsFabric;
+import com.liverm0r.transactions.business.interactors.impl.TransactionsInteractor;
+import com.liverm0r.transactions.business.helpers.products_fabric.IProductsFabric;
 import com.liverm0r.transactions.data.model.Product;
-import com.liverm0r.transactions.data.repositories.currency.ICurrencyQueryRepo;
-import com.liverm0r.transactions.data.repositories.detail_transactions.IProductHolderRepo;
+import com.liverm0r.transactions.data.repositories.ICurrencyQueryRepo;
+import com.liverm0r.transactions.data.repositories.IProductHolderRepo;
 import com.liverm0r.transactions.ui.transactions.TransactionsModel;
 
 import org.junit.Before;

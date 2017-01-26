@@ -1,9 +1,9 @@
-package com.liverm0r.transactions.business.transactions.exchange;
+package com.liverm0r.transactions.business.helpers.exchange;
 
 
 import android.support.annotation.NonNull;
 
-import com.liverm0r.transactions.business.transactions.exchange.graph.CurrencyNode;
+import com.liverm0r.transactions.business.helpers.exchange.graph.CurrencyNode;
 
 import java.util.List;
 
