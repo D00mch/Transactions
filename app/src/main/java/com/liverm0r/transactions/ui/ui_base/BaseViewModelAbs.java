@@ -4,7 +4,7 @@ package com.liverm0r.transactions.ui.ui_base;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.liverm0r.transactions.ui.common.error.IErrorHandler;
+import com.liverm0r.transactions.common.error.IErrorHandler;
 import com.liverm0r.transactions.common.rx_utils.RxSchedulersAbs;
 
 import io.reactivex.Observable;

@@ -4,8 +4,8 @@ import android.support.annotation.NonNull;
 
 import com.liverm0r.transactions.common.rx_utils.RxSchedulersAbs;
 import com.liverm0r.transactions.dagger.main.MainScope;
-import com.liverm0r.transactions.ui.common.error.IErrorHandler;
-import com.liverm0r.transactions.ui.common.ui_base.BaseViewModelAbs;
+import com.liverm0r.transactions.common.error.IErrorHandler;
+import com.liverm0r.transactions.ui.ui_base.BaseViewModelAbs;
 
 import javax.inject.Inject;
 

@@ -9,8 +9,8 @@ import android.widget.TextView;
 import com.liverm0r.transactions.App;
 import com.liverm0r.transactions.R;
 import com.liverm0r.transactions.dagger.currency.detail_transactions.DetailTransModule;
-import com.liverm0r.transactions.ui.common.ui_base.BaseActivity;
-import com.liverm0r.transactions.ui.common.ui_base.BaseViewModelAbs;
+import com.liverm0r.transactions.ui.ui_base.BaseActivity;
+import com.liverm0r.transactions.ui.ui_base.BaseViewModelAbs;
 
 import javax.inject.Inject;
 

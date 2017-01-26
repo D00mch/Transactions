@@ -6,8 +6,8 @@ import android.support.annotation.NonNull;
 import com.liverm0r.transactions.business.detail_transactions.IDetailTransInteractor;
 import com.liverm0r.transactions.common.rx_utils.RxSchedulersAbs;
 import com.liverm0r.transactions.dagger.currency.detail_transactions.DetailTransScope;
-import com.liverm0r.transactions.ui.common.error.IErrorHandler;
-import com.liverm0r.transactions.ui.common.ui_base.BaseViewModelAbs;
+import com.liverm0r.transactions.common.error.IErrorHandler;
+import com.liverm0r.transactions.ui.ui_base.BaseViewModelAbs;
 
 import javax.inject.Inject;
 

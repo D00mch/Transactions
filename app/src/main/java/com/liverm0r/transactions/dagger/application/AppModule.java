@@ -4,8 +4,8 @@ package com.liverm0r.transactions.dagger.application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.liverm0r.transactions.ui.common.error.ErrorHandler;
-import com.liverm0r.transactions.ui.common.error.IErrorHandler;
+import com.liverm0r.transactions.common.error.ErrorHandler;
+import com.liverm0r.transactions.common.error.IErrorHandler;
 
 import javax.inject.Singleton;
 

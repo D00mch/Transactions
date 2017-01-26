@@ -9,6 +9,9 @@ import java.util.List;
 
 import io.reactivex.Single;
 
+/**
+ * Interactor is business feature, method is useCase
+ */
 public interface ITransactionsInteractor {
 
     @NonNull Single<List<TransactionsModel>> getTransactions();
