@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.ui.common.error;
+package com.liverm0r.transactions.common.error;
 
 
 import android.content.Context;

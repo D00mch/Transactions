@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.ui.common.ui_base;
+package com.liverm0r.transactions.ui.ui_base;
 
 
 import android.content.Context;
