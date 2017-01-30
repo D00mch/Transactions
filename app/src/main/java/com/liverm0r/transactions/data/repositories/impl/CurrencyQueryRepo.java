@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import com.liverm0r.transactions.data.api.ICurrencyApi;
 import com.liverm0r.transactions.data.model.Rate;
 import com.liverm0r.transactions.data.model.Transaction;
-import com.liverm0r.transactions.data.repositories.BaseQueryRepo;
 import com.liverm0r.transactions.data.repositories.ICurrencyQueryRepo;
 
 import java.util.List;
