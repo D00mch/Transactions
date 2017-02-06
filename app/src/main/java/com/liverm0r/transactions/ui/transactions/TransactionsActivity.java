@@ -9,10 +9,9 @@ import android.widget.TextView;
 
 import com.liverm0r.transactions.App;
 import com.liverm0r.transactions.R;
-import com.liverm0r.transactions.dagger.currency.transactions.TransactionModule;
+import com.liverm0r.transactions.ui.detail_transactions.DetailActivity;
 import com.liverm0r.transactions.ui.ui_base.BaseActivity;
 import com.liverm0r.transactions.ui.ui_base.BaseViewModelAbs;
-import com.liverm0r.transactions.ui.detail_transactions.DetailActivity;
 
 import javax.inject.Inject;
 
@@ -38,7 +37,7 @@ public class TransactionsActivity extends BaseActivity implements ITransactionsR
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        App.get(this).currencyComponent().plus(new TransactionModule(this)).inject(this);
+        App.get(this).getTransactionsComponent(this).inject(this);
         setContentView(R.layout.transaction_activity);
         ButterKnife.bind(this);
 

@@ -4,9 +4,9 @@ package com.liverm0r.transactions.ui.detail_transactions;
 import android.support.annotation.NonNull;
 
 import com.liverm0r.transactions.business.interactors.IDetailTransInteractor;
+import com.liverm0r.transactions.common.error.IErrorHandler;
 import com.liverm0r.transactions.common.rx_utils.RxSchedulersAbs;
 import com.liverm0r.transactions.dagger.currency.detail_transactions.DetailTransScope;
-import com.liverm0r.transactions.common.error.IErrorHandler;
 import com.liverm0r.transactions.ui.ui_base.BaseViewModelAbs;
 
 import javax.inject.Inject;

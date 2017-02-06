@@ -32,7 +32,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override protected void onStop() {
         super.onStop();
         mDisposables.clear();
-        provideVM().onViewDestroyed();
+    }
+
+    @Override protected void onDestroy() {
+        super.onDestroy();
+        if(isFinishing()) provideVM().onViewDestroyed();
+    }
+
+    @Override public Object onRetainCustomNonConfigurationInstance() {
+        return super.onRetainCustomNonConfigurationInstance();
     }
 
     protected void baseViewModelBinding(BaseViewModelAbs vm) {

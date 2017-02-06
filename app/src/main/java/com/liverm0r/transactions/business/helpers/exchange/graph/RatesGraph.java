@@ -29,9 +29,6 @@ public class RatesGraph {
                     new CurrencyNode(rate.getTo()), rate.getFloatRate());
             edges.add(edge);
         }
-
-        System.out.println("nodes == " + nodes);
-        System.out.println("edges == " + edges);
     }
 
 

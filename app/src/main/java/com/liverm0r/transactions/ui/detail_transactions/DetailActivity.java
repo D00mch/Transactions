@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.liverm0r.transactions.App;
 import com.liverm0r.transactions.R;
-import com.liverm0r.transactions.dagger.currency.detail_transactions.DetailTransModule;
 import com.liverm0r.transactions.ui.ui_base.BaseActivity;
 import com.liverm0r.transactions.ui.ui_base.BaseViewModelAbs;
 
@@ -35,17 +34,18 @@ public class DetailActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        App.get(this).currencyComponent().plus(new DetailTransModule()).inject(this);
+        App.get(this).getDetailTransComponent().inject(this);
         setContentView(R.layout.detail_trans_activity);
         ButterKnife.bind(this);
 
         setUpRv();
+    }
 
-//        findViewById(R.id.activity_detail_sku).setOnClickListener(v ->{
-//            Intent intent = new Intent(this, MainActivity.class);
-//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            startActivity(new Intent(this, MainActivity.class));
-//        });
+    @Override protected void onDestroy() {
+        super.onDestroy();
+        if(isFinishing()){
+            App.get(this).removeDetailTransactionsComponent();
+        }
     }
 
     @Override protected void onStart() {

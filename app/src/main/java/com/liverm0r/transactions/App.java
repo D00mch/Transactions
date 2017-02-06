@@ -9,6 +9,11 @@ import com.liverm0r.transactions.dagger.application.AppModule;
 import com.liverm0r.transactions.dagger.application.DaggerAppComponent;
 import com.liverm0r.transactions.dagger.currency.CurrencyComponent;
 import com.liverm0r.transactions.dagger.currency.CurrencyModule;
+import com.liverm0r.transactions.dagger.currency.detail_transactions.DetailTransComponent;
+import com.liverm0r.transactions.dagger.currency.detail_transactions.DetailTransModule;
+import com.liverm0r.transactions.dagger.currency.transactions.TransactionModule;
+import com.liverm0r.transactions.dagger.currency.transactions.TransactionsComponent;
+import com.liverm0r.transactions.ui.transactions.ITransactionsRouter;
 
 public class App extends Application {
     private static String TAG = App.class.getSimpleName();
@@ -17,8 +22,9 @@ public class App extends Application {
     @NonNull
     private AppComponent mAppComponent;
 
-    @SuppressWarnings("NullableProblems")
     private CurrencyComponent mCurrencyComponent;
+    private TransactionsComponent mTransactionsComponent;
+    private DetailTransComponent mDetailTransComponent;
 
     @NonNull
     public static App get(@NonNull Context context) {
@@ -45,6 +51,30 @@ public class App extends Application {
 
     public void removeCurrencyComponentFromCache() {
         mCurrencyComponent = null;
+    }
+
+    @NonNull
+    public TransactionsComponent getTransactionsComponent(ITransactionsRouter router) {
+        if (mTransactionsComponent == null) {
+            mTransactionsComponent = currencyComponent().plus(new TransactionModule(router));
+        }
+        return mTransactionsComponent;
+    }
+
+    public void removeTransactionsComponent() {
+        mTransactionsComponent = null;
+    }
+
+    @NonNull
+    public DetailTransComponent getDetailTransComponent() {
+        if (mDetailTransComponent == null) {
+            mDetailTransComponent = currencyComponent().plus(new DetailTransModule());
+        }
+        return mDetailTransComponent;
+    }
+
+    public void removeDetailTransactionsComponent() {
+        mDetailTransComponent = null;
     }
 
     @NonNull

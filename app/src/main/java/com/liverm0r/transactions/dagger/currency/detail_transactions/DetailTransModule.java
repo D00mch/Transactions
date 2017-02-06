@@ -1,8 +1,8 @@
 package com.liverm0r.transactions.dagger.currency.detail_transactions;
 
 
-import com.liverm0r.transactions.business.interactors.impl.DetailTransInteractor;
 import com.liverm0r.transactions.business.interactors.IDetailTransInteractor;
+import com.liverm0r.transactions.business.interactors.impl.DetailTransInteractor;
 import com.liverm0r.transactions.data.repositories.IProductHolderRepo;
 
 import dagger.Module;
