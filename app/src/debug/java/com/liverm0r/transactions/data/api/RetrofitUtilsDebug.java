@@ -10,7 +10,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitUtilsDebug {
+public abstract class RetrofitUtilsDebug {
 
     private RetrofitUtilsDebug() {
     }
@@ -23,7 +23,7 @@ public class RetrofitUtilsDebug {
         return basicBuilder(url, context).build().create(sClass);
     }
 
-    protected static Retrofit.Builder basicBuilder(String url, Context context) {
+    private static Retrofit.Builder basicBuilder(String url, Context context) {
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(new FakeInterceptor(context))

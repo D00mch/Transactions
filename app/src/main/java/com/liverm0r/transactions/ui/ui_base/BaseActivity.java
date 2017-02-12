@@ -1,8 +1,8 @@
 package com.liverm0r.transactions.ui.ui_base;
 
-
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -14,7 +14,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private static final String TAG = BaseActivity.class.getSimpleName();
 
-    abstract protected BaseViewModelAbs provideVM();
+    protected abstract BaseViewModelAbs provideVM();
 
     private CompositeDisposable mDisposables;
 
@@ -24,26 +24,18 @@ public abstract class BaseActivity extends AppCompatActivity {
         mDisposables = new CompositeDisposable();
     }
 
-    @Override protected void onStart() {
-        super.onStart();
+    @Override protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
         baseViewModelBinding(provideVM());
-    }
-
-    @Override protected void onStop() {
-        super.onStop();
-        mDisposables.clear();
     }
 
     @Override protected void onDestroy() {
         super.onDestroy();
-        if(isFinishing()) provideVM().onViewDestroyed();
+        mDisposables.clear();
+        if (isFinishing()) provideVM().onViewDestroyed();
     }
 
-    @Override public Object onRetainCustomNonConfigurationInstance() {
-        return super.onRetainCustomNonConfigurationInstance();
-    }
-
-    protected void baseViewModelBinding(BaseViewModelAbs vm) {
+    private void baseViewModelBinding(BaseViewModelAbs vm) {
         bind(vm.errorAction(), action -> action.accept(this));
         bind(vm.errorMessage(), System.out::println);
     }

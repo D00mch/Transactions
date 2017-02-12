@@ -39,6 +39,7 @@ public class DetailActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         setUpRv();
+        setUpViewModel(mViewModel);
     }
 
     @Override protected void onDestroy() {
@@ -46,11 +47,6 @@ public class DetailActivity extends BaseActivity {
         if(isFinishing()){
             App.get(this).removeDetailTransactionsComponent();
         }
-    }
-
-    @Override protected void onStart() {
-        super.onStart();
-        setUpViewModel(mViewModel);
     }
 
     @SuppressLint({"DefaultLocale", "SetTextI18n"})

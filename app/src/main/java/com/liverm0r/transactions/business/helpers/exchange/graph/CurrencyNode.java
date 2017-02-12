@@ -11,7 +11,6 @@ public class CurrencyNode {
         this.mCurrencyName = name;
     }
 
-
     //—————————————————————————————————————————————————————————————————————— Object's methods (based on name);
 
     @Override public boolean equals(Object o) {

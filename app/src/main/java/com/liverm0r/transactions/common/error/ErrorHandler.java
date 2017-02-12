@@ -26,7 +26,6 @@ public class ErrorHandler implements IErrorHandler {
         mContext = context;
         mStringSubject = PublishSubject.create();
         mErrorActionSubject = PublishSubject.create();
-
     }
 
     @Override public void errorHappened(Throwable exception) {

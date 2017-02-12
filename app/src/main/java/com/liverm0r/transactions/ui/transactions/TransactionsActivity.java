@@ -43,10 +43,6 @@ public class TransactionsActivity extends BaseActivity implements ITransactionsR
 
         toolbarTitle.setText(R.string.TransactionsTitle);
         setUpRv();
-    }
-
-    @Override protected void onStart() {
-        super.onStart();
         bindViewModel(mViewModel);
     }
 

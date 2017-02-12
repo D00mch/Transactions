@@ -8,7 +8,7 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitUtils {
+public abstract class RetrofitUtils {
 
     private RetrofitUtils() {
     }
@@ -19,7 +19,7 @@ public class RetrofitUtils {
     }
 
     @NonNull
-    protected static Retrofit.Builder basicBuilder(@NonNull String url) {
+    private static Retrofit.Builder basicBuilder(@NonNull String url) {
         return new Retrofit.Builder().baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create());
