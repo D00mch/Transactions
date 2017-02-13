@@ -30,7 +30,13 @@ public class MainActivity extends BaseActivity implements IMainRouter {
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        App.get(this).applicationComponent().plus(new MainModule(this)).inject(this);
+        App.get(this)
+                .applicationComponent()
+                .mainComponentBuilder()
+                .mainModule(new MainModule(this))
+                .build()
+                .inject(this);
+
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mViewModel.created();

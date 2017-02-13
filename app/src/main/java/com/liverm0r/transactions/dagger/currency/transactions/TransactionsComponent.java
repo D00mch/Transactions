@@ -9,4 +9,10 @@ import dagger.Subcomponent;
 @TransactionsScope
 public interface TransactionsComponent {
     void inject(TransactionsActivity transactionsActivity);
+
+    @Subcomponent.Builder
+    interface Builder {
+        TransactionsComponent.Builder transactionModule(TransactionModule module);
+        TransactionsComponent build();
+    }
 }

@@ -44,7 +44,10 @@ public class App extends Application {
     @NonNull
     public CurrencyComponent currencyComponent() {
         if (mCurrencyComponent == null) {
-            mCurrencyComponent = applicationComponent().plus(new CurrencyModule());
+            mCurrencyComponent = applicationComponent()
+                    .currencyComponentBuilder()
+                    .currencyModule(new CurrencyModule())
+                    .build();
         }
         return mCurrencyComponent;
     }
@@ -56,7 +59,10 @@ public class App extends Application {
     @NonNull
     public TransactionsComponent getTransactionsComponent(ITransactionsRouter router) {
         if (mTransactionsComponent == null) {
-            mTransactionsComponent = currencyComponent().plus(new TransactionModule(router));
+            mTransactionsComponent = currencyComponent()
+                    .transactionComponentBuilder()
+                    .transactionModule(new TransactionModule(router))
+                    .build();
         }
         return mTransactionsComponent;
     }
@@ -68,7 +74,10 @@ public class App extends Application {
     @NonNull
     public DetailTransComponent getDetailTransComponent() {
         if (mDetailTransComponent == null) {
-            mDetailTransComponent = currencyComponent().plus(new DetailTransModule());
+            mDetailTransComponent = currencyComponent()
+                    .detailTransComponentBuilder()
+                    .detailTransModule(new DetailTransModule())
+                    .build();
         }
         return mDetailTransComponent;
     }

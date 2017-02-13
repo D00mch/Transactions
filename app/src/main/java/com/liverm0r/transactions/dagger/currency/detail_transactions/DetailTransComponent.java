@@ -9,4 +9,10 @@ import dagger.Subcomponent;
 @Subcomponent(modules = {DetailTransModule.class})
 public interface DetailTransComponent {
     void inject(DetailActivity detailActivity);
+
+    @Subcomponent.Builder
+    interface Builder {
+        DetailTransComponent.Builder detailTransModule(DetailTransModule module);
+        DetailTransComponent build();
+    }
 }
