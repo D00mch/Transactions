@@ -19,7 +19,7 @@ public abstract class RetrofitUtils {
     }
 
     @NonNull
-    private static Retrofit.Builder basicBuilder(@NonNull String url) {
+    protected static Retrofit.Builder basicBuilder(@NonNull String url) {
         return new Retrofit.Builder().baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create());
