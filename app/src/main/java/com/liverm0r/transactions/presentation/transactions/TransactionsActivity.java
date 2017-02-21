@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.ui.transactions;
+package com.liverm0r.transactions.presentation.transactions;
 
 
 import android.content.Intent;
@@ -9,9 +9,9 @@ import android.widget.TextView;
 
 import com.liverm0r.transactions.App;
 import com.liverm0r.transactions.R;
-import com.liverm0r.transactions.ui.detail_transactions.DetailActivity;
-import com.liverm0r.transactions.ui.ui_base.BaseActivity;
-import com.liverm0r.transactions.ui.ui_base.BaseViewModelAbs;
+import com.liverm0r.transactions.presentation.detail_transactions.DetailActivity;
+import com.liverm0r.transactions.presentation.ui_base.BaseActivity;
+import com.liverm0r.transactions.presentation.ui_base.BaseViewModelAbs;
 
 import javax.inject.Inject;
 

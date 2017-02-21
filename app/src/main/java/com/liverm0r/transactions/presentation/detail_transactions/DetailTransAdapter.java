@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.ui.detail_transactions;
+package com.liverm0r.transactions.presentation.detail_transactions;
 
 
 import android.support.annotation.NonNull;

@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.ui.main;
+package com.liverm0r.transactions.presentation.main;
 
 
 public interface IMainRouter {

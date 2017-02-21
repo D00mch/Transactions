@@ -1,11 +1,11 @@
-package com.liverm0r.transactions.ui.main;
+package com.liverm0r.transactions.presentation.main;
 
 import android.support.annotation.NonNull;
 
 import com.liverm0r.transactions.common.rx_utils.RxSchedulersAbs;
 import com.liverm0r.transactions.dagger.main.MainScope;
 import com.liverm0r.transactions.common.error.IErrorHandler;
-import com.liverm0r.transactions.ui.ui_base.BaseViewModelAbs;
+import com.liverm0r.transactions.presentation.ui_base.BaseViewModelAbs;
 
 import javax.inject.Inject;
 
