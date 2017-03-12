@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.presentation.transactions;
+package com.liverm0r.transactions.ui.transactions;
 
 
 import android.support.v7.widget.RecyclerView;

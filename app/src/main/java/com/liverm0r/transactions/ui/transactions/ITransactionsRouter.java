@@ -1,4 +1,4 @@
-package com.liverm0r.transactions.presentation.transactions;
+package com.liverm0r.transactions.ui.transactions;
 
 
 public interface ITransactionsRouter {
